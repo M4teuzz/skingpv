@@ -21,8 +21,12 @@ body {
     background: none !important;
 }
 
-.custom.disconnected div {
-    display: none !important;
+.custom.disconnected .stick.left {
+    display: block !important;
+}
+
+.custom.disconnected .trigger {
+    opacity: 0 !important;
 }
 
 /* Analogico esquerdo: o Gamepad Viewer desloca este elemento. */
