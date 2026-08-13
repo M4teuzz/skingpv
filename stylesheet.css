@@ -15,7 +15,12 @@ body {
     width: 450px;
     height: 300px;
     margin: 0;
-    background: transparent url("./thazz.png") center / contain no-repeat;
+    background-color: transparent !important;
+    background-image: url("./thazz.png?v=3") !important;
+    background-position: center !important;
+    background-size: 450px 300px !important;
+    background-repeat: no-repeat !important;
+    transform: none !important;
 }
 
 /* Do not leave a controller silhouette visible when it disconnects. */
@@ -168,4 +173,9 @@ body {
 .custom .meta,
 .custom .speaker {
     display: none;
+}
+
+/* Stable OBS mode: the artwork is the controller; suppress Xbox sprite layers. */
+.controller.custom > div {
+    display: none !important;
 }
