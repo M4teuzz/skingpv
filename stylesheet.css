@@ -62,7 +62,7 @@ body {
     background: rgba(0, 238, 255, 0.34);
     border: 3px solid rgba(95, 250, 255, 0.95);
     filter: drop-shadow(0 0 5px #00eaff) drop-shadow(0 0 9px #064cff);
-    opacity: 0;
+    opacity: 0 !important;
     transition: opacity 45ms linear, filter 45ms linear;
     pointer-events: none;
 }
@@ -85,12 +85,8 @@ body {
     opacity: 0 !important;
 }
 
-.custom .trigger:not([data-value="0"]) {
-    opacity: 0.72 !important;
-}
-
 .custom .trigger-button.pressed {
-    opacity: 0.82;
+    opacity: 0.72 !important;
 }
 
 /* Left stick: small steering-position light inside the wheel hub. */
@@ -103,6 +99,7 @@ body {
     border-radius: 50%;
     background: #00eaff;
     box-shadow: 0 0 10px #00eaff, 0 0 24px #075cff;
+    opacity: 0;
 }
 
 .custom .stick.left {
@@ -115,6 +112,7 @@ body {
 }
 
 .custom .stick.pressed {
+    opacity: 1;
     background: #fff;
     box-shadow: 0 0 12px #fff, 0 0 32px #00eaff;
 }
@@ -129,7 +127,7 @@ body {
     border-radius: 50%;
     background: rgba(0, 20, 90, 0.75);
     box-shadow: 0 0 8px #006cff;
-    opacity: 0.35;
+    opacity: 0;
 }
 
 .custom .button.a { left: 240px; }
@@ -159,7 +157,7 @@ body {
     border: 1px solid #00eaff;
     border-radius: 5px;
     background: rgba(0, 20, 90, 0.75);
-    opacity: 0.2;
+    opacity: 0;
 }
 
 .custom .face.up    { left: 209px; top: 165px; }
