@@ -53,8 +53,8 @@ body {
     top: 8px !important;
     width: 164px !important;
     height: 155px !important;
-    margin: 0 !important;
     float: none !important;
+    transform: none !important;
     background: none !important;
     border: 0;
     border-radius: 0;
