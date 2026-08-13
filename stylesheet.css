@@ -1,10 +1,12 @@
 Exit code: 0
-Wall time: 1.4 seconds
+Wall time: 1 seconds
 Output:
 /* Thazz driving overlay â€” analog steering + LT/RT pedals. */
 
 html,
 body {
+    width: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
@@ -12,10 +14,13 @@ body {
 }
 
 .controller.custom {
-    position: relative;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
     width: 450px;
     height: 300px;
-    margin: 0;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
     background: none !important;
     overflow: visible !important;
 }
