@@ -99,6 +99,12 @@ body {
     display: none !important;
 }
 
+/* O Gamepad Viewer cria uma segunda representacao do stick para volante. */
+.custom .wheels,
+.custom .wheel {
+    display: none !important;
+}
+
 /* LT e RT: a opacidade e controlada pelo valor analogico do gatilho. */
 .custom .triggers {
     display: block !important;
