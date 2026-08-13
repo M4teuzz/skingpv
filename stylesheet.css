@@ -41,7 +41,7 @@ body {
     height: 300px !important;
     margin: 0 !important;
     padding: 0 !important;
-    transform: translateY(170px) !important;
+    transform: translateY(300px) !important;
     overflow: visible !important;
 }
 
@@ -89,7 +89,7 @@ body {
     height: 300px !important;
     margin: 0 !important;
     padding: 0 !important;
-    transform: translateY(120px) !important;
+    transform: translateY(250px) !important;
     overflow: visible !important;
 }
 
