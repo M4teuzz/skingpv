@@ -1,7 +1,4 @@
-/* Thazz: imagem estÃ¡tica para Gamepad Viewer / OBS.
- * O controle continua sendo detectado, mas nenhum sprite, botÃ£o,
- * gatilho ou analÃ³gico Ã© desenhado sobre o PNG.
- */
+/* Thazz driving overlay â€” analog steering + LT/RT pedals. */
 
 html,
 body {
@@ -11,28 +8,98 @@ body {
     background: transparent !important;
 }
 
-.controller.custom,
-.controller.custom.disconnected {
-    position: relative !important;
-    width: 450px !important;
-    height: 300px !important;
-    margin: 0 !important;
-    background-color: transparent !important;
-    background-image: url("./thazz.png?v=6") !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: 450px 300px !important;
-    transform: none !important;
+.controller.custom {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    margin: 0;
+    background: none !important;
 }
 
-/* Esconde absolutamente todas as camadas nativas e seus estados pressed. */
-.controller.custom > *,
-.controller.custom > * > *,
-.controller.custom > * > * > * {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
+.custom.disconnected {
     background: none !important;
-    box-shadow: none !important;
-    filter: none !important;
+}
+
+.custom.disconnected div {
+    display: none !important;
+}
+
+/* Analogico esquerdo: o Gamepad Viewer desloca este elemento. */
+.custom .sticks {
+    position: absolute;
+    inset: 0;
+    width: 450px;
+    height: 300px;
+}
+
+.custom .stick.left {
+    position: absolute;
+    left: 143px;
+    top: 0;
+    width: 164px;
+    height: 155px;
+    margin: 0;
+    background: url("./volante.png?v=7") center / contain no-repeat !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.custom .stick.right {
+    display: none !important;
+}
+
+/* LT e RT: a opacidade e controlada pelo valor analogico do gatilho. */
+.custom .triggers {
+    position: absolute;
+    inset: 0;
+    width: 450px;
+    height: 300px;
+}
+
+.custom .trigger {
+    position: absolute;
+    top: 116px;
+    width: 138px;
+    height: 167px;
+    border: 0;
+    box-shadow: none;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+    opacity: 0;
+}
+
+.custom .trigger.left {
+    left: 8px;
+    background-image: url("./pedal-esquerdo.png?v=7") !important;
+}
+
+.custom .trigger.right {
+    right: 8px;
+    background-image: url("./pedal-direito.png?v=7") !important;
+}
+
+.custom .trigger[data-value="0"],
+.custom .trigger[data-value="0.0"],
+.custom .trigger[data-value="0.00"] {
+    opacity: 0 !important;
+}
+
+/* Oculta tudo que nao faz parte do overlay de direcao. */
+.custom .quadrant,
+.custom .bumpers,
+.custom .bumper,
+.custom .arrows,
+.custom .back,
+.custom .start,
+.custom .abxy,
+.custom .button,
+.custom .dpad,
+.custom .face,
+.custom .touchpad,
+.custom .meta,
+.custom .speaker,
+.custom .trigger-button {
+    display: none !important;
 }
