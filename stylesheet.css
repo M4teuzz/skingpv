@@ -14,6 +14,7 @@ body {
     height: 300px;
     margin: 0;
     background: none !important;
+    overflow: visible !important;
 }
 
 .custom.disconnected {
@@ -26,19 +27,30 @@ body {
 
 /* Analogico esquerdo: o Gamepad Viewer desloca este elemento. */
 .custom .sticks {
-    position: absolute;
-    inset: 0;
-    width: 450px;
-    height: 300px;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 450px !important;
+    height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
 }
 
 .custom .stick.left {
-    position: absolute;
-    left: 143px;
-    top: 0;
-    width: 164px;
-    height: 155px;
-    margin: 0;
+    display: block !important;
+    position: absolute !important;
+    left: 143px !important;
+    top: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 164px !important;
+    height: 155px !important;
+    float: none !important;
     background: url("./volante.png?v=7") center / contain no-repeat !important;
     border: 0;
     border-radius: 0;
@@ -51,17 +63,32 @@ body {
 
 /* LT e RT: a opacidade e controlada pelo valor analogico do gatilho. */
 .custom .triggers {
-    position: absolute;
-    inset: 0;
-    width: 450px;
-    height: 300px;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 450px !important;
+    height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
 }
 
 .custom .trigger {
-    position: absolute;
-    top: 116px;
-    width: 138px;
-    height: 167px;
+    display: block !important;
+    position: absolute !important;
+    top: 116px !important;
+    bottom: auto !important;
+    width: 138px !important;
+    height: 167px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    transform: none !important;
+    overflow: visible !important;
     border: 0;
     box-shadow: none;
     background-repeat: no-repeat !important;
@@ -71,12 +98,14 @@ body {
 }
 
 .custom .trigger.left {
-    left: 8px;
+    left: 8px !important;
+    right: auto !important;
     background-image: url("./pedal-esquerdo.png?v=7") !important;
 }
 
 .custom .trigger.right {
-    right: 8px;
+    right: 8px !important;
+    left: auto !important;
     background-image: url("./pedal-direito.png?v=7") !important;
 }
 
