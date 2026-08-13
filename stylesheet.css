@@ -1,183 +1,38 @@
-/* Thazz wheel skin for https://gamepadviewer.com
- * Keep this file and thazz.png in the same PUBLIC folder.
- * Source canvas: 1536 x 1024.
+/* Thazz: imagem estÃ¡tica para Gamepad Viewer / OBS.
+ * O controle continua sendo detectado, mas nenhum sprite, botÃ£o,
+ * gatilho ou analÃ³gico Ã© desenhado sobre o PNG.
  */
 
 html,
 body {
     margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden !important;
     background: transparent !important;
 }
 
-.controller.custom {
-    position: relative;
-    width: 450px;
-    height: 300px;
-    margin: 0;
+.controller.custom,
+.controller.custom.disconnected {
+    position: relative !important;
+    width: 450px !important;
+    height: 300px !important;
+    margin: 0 !important;
     background-color: transparent !important;
-    background-image: url("./thazz.png?v=3") !important;
+    background-image: url("./thazz.png?v=6") !important;
+    background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: 450px 300px !important;
-    background-repeat: no-repeat !important;
     transform: none !important;
 }
 
-/* Do not leave a controller silhouette visible when it disconnects. */
-.custom.disconnected {
-    background: transparent url("./thazz.png") center / contain no-repeat;
-}
-
-.custom.disconnected > div {
-    display: none;
-}
-
-/* Input containers use the same 450 x 300 coordinate system as the artwork. */
-.custom .quadrant,
-.custom .arrows,
-.custom .abxy,
-.custom .dpad,
-.custom .sticks,
-.custom .bumpers,
-.custom .triggers {
-    position: absolute;
-    inset: 0;
-    width: 450px;
-    height: 300px;
-    transform: none;
-}
-
-.custom .quadrant {
-    display: none;
-}
-
-/* Analog pedals (LT and RT). The Viewer changes their opacity with pressure. */
-.custom .trigger,
-.custom .trigger-button {
-    position: absolute;
-    top: 134px;
-    width: 126px;
-    height: 152px;
-    box-sizing: border-box;
-    background: rgba(0, 238, 255, 0.34);
-    border: 3px solid rgba(95, 250, 255, 0.95);
-    filter: drop-shadow(0 0 5px #00eaff) drop-shadow(0 0 9px #064cff);
+/* Esconde absolutamente todas as camadas nativas e seus estados pressed. */
+.controller.custom > *,
+.controller.custom > * > *,
+.controller.custom > * > * > * {
+    display: none !important;
+    visibility: hidden !important;
     opacity: 0 !important;
-    transition: opacity 45ms linear, filter 45ms linear;
-    pointer-events: none;
-}
-
-.custom .trigger.left,
-.custom .trigger-button.left {
-    left: 10px;
-    clip-path: polygon(42% 0, 100% 5%, 91% 100%, 0 95%);
-    border-radius: 38% 23% 24% 28%;
-}
-
-.custom .trigger.right,
-.custom .trigger-button.right {
-    right: 10px;
-    clip-path: polygon(0 5%, 58% 0, 100% 95%, 9% 100%);
-    border-radius: 23% 38% 28% 24%;
-}
-
-.custom .trigger[data-value="0"] {
-    opacity: 0 !important;
-}
-
-.custom .trigger-button.pressed {
-    opacity: 0.72 !important;
-}
-
-/* Left stick: small steering-position light inside the wheel hub. */
-.custom .stick {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    margin: 0;
-    border: 1px solid #9fffff;
-    border-radius: 50%;
-    background: #00eaff;
-    box-shadow: 0 0 10px #00eaff, 0 0 24px #075cff;
-    opacity: 0;
-}
-
-.custom .stick.left {
-    left: 220px;
-    top: 83px;
-}
-
-.custom .stick.right {
-    display: none;
-}
-
-.custom .stick.pressed {
-    opacity: 1;
-    background: #fff;
-    box-shadow: 0 0 12px #fff, 0 0 32px #00eaff;
-}
-
-/* Compact input LEDs below the wheel (A, B, X, Y). */
-.custom .button {
-    position: absolute;
-    top: 157px;
-    width: 9px;
-    height: 9px;
-    border: 1px solid #00eaff;
-    border-radius: 50%;
-    background: rgba(0, 20, 90, 0.75);
-    box-shadow: 0 0 8px #006cff;
-    opacity: 0;
-}
-
-.custom .button.a { left: 240px; }
-.custom .button.b { left: 252px; }
-.custom .button.x { left: 216px; }
-.custom .button.y { left: 228px; }
-
-.custom .button.pressed,
-.custom .face.pressed,
-.custom .bumper.pressed,
-.custom .back.pressed,
-.custom .start.pressed {
-    opacity: 1;
-    background: #bfffff;
-    box-shadow: 0 0 12px #fff, 0 0 28px #00eaff, 0 0 45px #064cff;
-}
-
-/* Remaining inputs are small indicators, kept clear of the artwork. */
-.custom .face,
-.custom .bumper,
-.custom .back,
-.custom .start {
-    position: absolute;
-    top: 170px;
-    width: 7px;
-    height: 7px;
-    border: 1px solid #00eaff;
-    border-radius: 5px;
-    background: rgba(0, 20, 90, 0.75);
-    opacity: 0;
-}
-
-.custom .face.up    { left: 209px; top: 165px; }
-.custom .face.down  { left: 209px; top: 181px; }
-.custom .face.left  { left: 201px; top: 173px; }
-.custom .face.right { left: 217px; top: 173px; }
-.custom .bumper.left  { left: 226px; }
-.custom .bumper.right { left: 236px; }
-.custom .back  { left: 246px; }
-.custom .start { left: 256px; }
-
-/* Some Viewer versions add these elements. */
-.custom .touchpad,
-.custom .meta,
-.custom .speaker {
-    display: none;
-}
-
-/* Remove inherited Xbox sprite images while retaining the live input elements. */
-.custom > div,
-.custom > div > div {
-    background-image: none;
+    background: none !important;
+    box-shadow: none !important;
+    filter: none !important;
 }
