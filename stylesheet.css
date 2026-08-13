@@ -1,5 +1,5 @@
 Exit code: 0
-Wall time: 1.1 seconds
+Wall time: 1 seconds
 Output:
 /* Thazz driving overlay â€” analog steering + LT/RT pedals. */
 
@@ -86,6 +86,13 @@ body {
     height: 100%;
     background: url("./volante.png?v=11") center / contain no-repeat;
     pointer-events: none;
+}
+
+/* Remove a segunda camada visual criada pelo estilo-base do Gamepad Viewer. */
+.custom .stick.left::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
 }
 
 .custom .stick.right {
