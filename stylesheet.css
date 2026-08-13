@@ -14,7 +14,7 @@ body {
 }
 
 .controller.custom {
-    display: block !important;
+    display: none !important;
     position: absolute !important;
     left: 50% !important;
     top: 50% !important;
@@ -29,7 +29,11 @@ body {
     z-index: 9999 !important;
 }
 
-.custom.disconnected {
+#gamepad-0.controller.custom {
+    display: block !important;
+}
+
+#gamepad-0.custom.disconnected {
     display: block !important;
     background: none !important;
     opacity: 1 !important;
