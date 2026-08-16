@@ -1,0 +1,155 @@
+html,
+body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+.controller.custom {
+    display: none !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 450px;
+    height: 300px;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    background: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999 !important;
+}
+
+#gamepad-0.controller.custom,
+#gamepad-0.custom.disconnected {
+    display: block !important;
+}
+
+.custom.disconnected .trigger {
+    opacity: 0 !important;
+}
+
+.custom .sticks {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 120px !important;
+    width: 450px !important;
+    height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.custom .stick.left {
+    display: block !important;
+    position: absolute !important;
+    left: 143px !important;
+    top: 8px !important;
+    width: 164px !important;
+    height: 155px !important;
+    float: none !important;
+    transform: none !important;
+    background: none !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible !important;
+}
+
+.custom .stick.left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./volante-china.png?v=1") center / contain no-repeat;
+    pointer-events: none;
+}
+
+.custom .stick.right,
+.custom .wheels,
+.custom .wheel {
+    display: none !important;
+}
+
+.custom .triggers {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 450px !important;
+    height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.custom .trigger {
+    display: block !important;
+    position: absolute !important;
+    top: 140px !important;
+    width: 118px !important;
+    height: 143px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    border: 0;
+    box-shadow: none;
+    background: none !important;
+    opacity: 0;
+}
+
+.custom .trigger.left {
+    left: 8px !important;
+}
+
+.custom .trigger.right {
+    right: 8px !important;
+}
+
+.custom .trigger::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.custom .trigger.left::before {
+    background-image: url("./pedal-esquerdo-china.png?v=1");
+}
+
+.custom .trigger.right::before {
+    background-image: url("./pedal-direito-china.png?v=1");
+}
+
+.custom .trigger[data-value="0"],
+.custom .trigger[data-value="0.0"],
+.custom .trigger[data-value="0.00"] {
+    opacity: 0 !important;
+}
+
+.custom .quadrant,
+.custom .bumpers,
+.custom .bumper,
+.custom .arrows,
+.custom .back,
+.custom .start,
+.custom .abxy,
+.custom .button,
+.custom .dpad,
+.custom .face,
+.custom .touchpad,
+.custom .meta,
+.custom .speaker,
+.custom .trigger-button {
+    display: none !important;
+}
