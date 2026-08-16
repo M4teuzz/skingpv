@@ -29,6 +29,10 @@ body {
     display: block !important;
 }
 
+.custom .plshalpme {
+    display: none !important;
+}
+
 .custom.disconnected .trigger {
     opacity: 0 !important;
 }
@@ -44,6 +48,7 @@ body {
     padding: 0 !important;
     transform: none !important;
     overflow: visible !important;
+    z-index: 2 !important;
 }
 
 .custom .stick.left {
@@ -68,6 +73,7 @@ body {
     inset: 0;
     background: url("./volante-china.png?v=1") center / contain no-repeat;
     pointer-events: none;
+    z-index: 2;
 }
 
 .custom .stick.right,
