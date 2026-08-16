@@ -71,7 +71,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("./volante-china.png?v=1") center / contain no-repeat;
+    background: url("./volante.png?v=1") center / contain no-repeat;
     pointer-events: none;
     z-index: 2;
 }
@@ -130,11 +130,11 @@ body {
 }
 
 .custom .trigger.left::before {
-    background-image: url("./pedal-esquerdo-china.png?v=1");
+    background-image: url("./pedal-esquerdo.png?v=1");
 }
 
 .custom .trigger.right::before {
-    background-image: url("./pedal-direito-china.png?v=1");
+    background-image: url("./pedal-direito.png?v=1");
 }
 
 .custom .trigger[data-value="0"],
