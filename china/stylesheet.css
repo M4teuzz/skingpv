@@ -134,7 +134,8 @@ body {
 }
 
 .custom .trigger.right::before {
-    background-image: url("./pedal-direito.png?v=1");
+    background-image: url("./pedal-esquerdo.png?v=1");
+    transform: scaleX(-1);
 }
 
 .custom .trigger[data-value="0"],
