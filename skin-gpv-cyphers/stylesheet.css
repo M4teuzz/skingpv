@@ -13,8 +13,8 @@
     --pedal-width: 118px;
     --pedal-height: 143px;
     --wheel-image: url("./assets/volante-cyphers.png?v=2");
-    --left-pedal-image: url("./assets/pedal-esquerdo-oni.png?v=1");
-    --right-pedal-image: url("./assets/pedal-direito-oni.png?v=1");
+    --left-pedal-image: url("./assets/pedal-direito-oni.png?v=2");
+    --right-pedal-image: url("./assets/pedal-esquerdo-oni.png?v=2");
 }
 
 html,
@@ -228,3 +228,4 @@ body {
 .custom .trigger-button {
     display: none !important;
 }
+
