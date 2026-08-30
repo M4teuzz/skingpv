@@ -1,0 +1,216 @@
+/* Cyphers PS4/DS4: analogicos simetricos e dois pedais. */
+
+:root {
+    --overlay-width: 560px;
+    --overlay-height: 300px;
+    --overlay-scale: 1;
+    --stick-size: 104px;
+    --left-stick-top: 65px;
+    --right-stick-top: 65px;
+    --left-stick-left: 134px;
+    --right-stick-left: 298px;
+    --pedal-width: 102px;
+    --pedal-height: 132px;
+    --pedal-top: 154px;
+    --pedal-gap: 12px;
+    --stick-image: url("./assets/analogico-oni.png?v=1");
+    /* Os arquivos ficam cruzados porque a arte original dos pedais veio espelhada. */
+    --left-pedal-image: url("./assets/pedal-direito-oni.png?v=1");
+    --right-pedal-image: url("./assets/pedal-esquerdo-oni.png?v=1");
+}
+
+html,
+body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+.controller.custom {
+    display: none !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: var(--overlay-width) !important;
+    height: var(--overlay-height) !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) scale(var(--overlay-scale)) !important;
+    transform-origin: center !important;
+    background: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999 !important;
+}
+
+.controller.custom:not(.disconnected),
+#gamepad-0.controller.custom.disconnected {
+    display: block !important;
+}
+
+.custom.disconnected .stick {
+    display: block !important;
+}
+
+.custom.disconnected .trigger {
+    opacity: 0 !important;
+}
+
+.custom .sticks {
+    display: block !important;
+    position: absolute !important;
+    inset: 70px auto auto 0 !important;
+    width: var(--overlay-width) !important;
+    height: var(--overlay-height) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.custom .stick.left,
+.custom .stick.right {
+    display: block !important;
+    position: absolute !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: var(--stick-size) !important;
+    height: var(--stick-size) !important;
+    float: none !important;
+    transform: none !important;
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+.custom .stick.left {
+    left: var(--left-stick-left) !important;
+    top: var(--left-stick-top) !important;
+}
+
+.custom .stick.right {
+    left: var(--right-stick-left) !important;
+    top: var(--right-stick-top) !important;
+}
+
+.custom .stick.left::before,
+.custom .stick.right::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: var(--stick-image) center / contain no-repeat;
+    filter: drop-shadow(0 0 7px rgba(205, 0, 18, 0.78));
+    pointer-events: none;
+}
+
+.custom .stick.left::after,
+.custom .stick.right::after {
+    content: none !important;
+    display: none !important;
+}
+
+.custom .wheels,
+.custom .wheel {
+    display: none !important;
+}
+
+.custom .triggers {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: var(--overlay-width) !important;
+    height: var(--overlay-height) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.custom .trigger {
+    display: block !important;
+    position: absolute !important;
+    top: var(--pedal-top) !important;
+    bottom: auto !important;
+    width: var(--pedal-width) !important;
+    height: var(--pedal-height) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+    opacity: 0;
+}
+
+.custom .trigger.left {
+    left: var(--pedal-gap) !important;
+    right: auto !important;
+}
+
+.custom .trigger.right {
+    right: var(--pedal-gap) !important;
+    left: auto !important;
+}
+
+.custom .trigger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 6px rgba(205, 0, 18, 0.7));
+    pointer-events: none;
+}
+
+.custom .trigger.left::before {
+    background-image: var(--left-pedal-image);
+}
+
+.custom .trigger.right::before {
+    background-image: var(--right-pedal-image);
+}
+
+.custom .trigger[data-value="0"],
+.custom .trigger[data-value="0.0"],
+.custom .trigger[data-value="0.00"] {
+    opacity: 0 !important;
+}
+
+.custom .quadrant,
+.custom .bumpers,
+.custom .bumper,
+.custom .arrows,
+.custom .back,
+.custom .start,
+.custom .abxy,
+.custom .button,
+.custom .dpad,
+.custom .face,
+.custom .touchpad,
+.custom .meta,
+.custom .speaker,
+.custom .trigger-button {
+    display: none !important;
+}
+
+@media (max-width: 559px), (max-height: 299px) {
+    :root {
+        --overlay-scale: 0.75;
+    }
+}
+
+@media (max-width: 419px), (max-height: 224px) {
+    :root {
+        --overlay-scale: 0.55;
+    }
+}
