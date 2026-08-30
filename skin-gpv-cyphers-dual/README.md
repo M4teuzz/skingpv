@@ -1,6 +1,6 @@
 # Cyphers Dual
 
-Variante do overlay Cyphers com dois pedais e os dois analogicos do controle.
+Variante do overlay Cyphers inspirada em um painel de controle: dois paddles brancos curvos e dois analogicos pretos compactos, alinhados horizontalmente.
 
 ## Controles exibidos
 
@@ -15,7 +15,7 @@ Os dois analogicos usam o mesmo asset Oni, mas cada elemento recebe independente
 
 Hospede esta pasta preservando a subpasta `assets` e informe a URL publica de `stylesheet.css` no parametro `css` do Gamepad Viewer.
 
-Tamanho recomendado para a fonte de navegador no OBS: **500 x 280 px** ou maior.
+Tamanho recomendado para a fonte de navegador no OBS: **500 x 210 px** ou maior.
 
 Use `nocurve=1` na URL. O CSS tambem força `transform: none` nos sticks para impedir a inclinacao 3D, mantendo o deslocamento horizontal e vertical aplicado por margem.
 
@@ -23,4 +23,4 @@ Use `nocurve=1` na URL. O CSS tambem força `transform: none` nos sticks para im
 
 As medidas e URLs dos assets ficam nas variaveis do bloco `:root` no inicio de `stylesheet.css`.
 
-O tema foi produzido em preto e vermelho a partir da referencia visual Cyphers/Oni. O asset do analogico foi gerado em alta resolucao e otimizado para 256 x 256 px com transparencia real.
+Os assets atuais sao `analogico-preto.png` e `pedal-branco.png`. O mesmo pedal e espelhado pelo CSS no lado direito, garantindo simetria. Os assets Oni anteriores foram preservados na pasta para permitir retorno ao tema antigo.

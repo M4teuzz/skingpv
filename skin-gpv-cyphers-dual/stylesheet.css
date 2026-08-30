@@ -1,21 +1,20 @@
-/* Cyphers Dual: dois analogicos e dois pedais. */
+/* Cyphers Dual: dois analogicos alinhados e dois paddles brancos. */
 
 :root {
     --overlay-width: 500px;
-    --overlay-height: 280px;
+    --overlay-height: 210px;
     --overlay-scale: 1;
-    --stick-size: 108px;
-    --stick-top: 10px;
-    --left-stick-left: 122px;
-    --right-stick-left: 270px;
-    --pedal-width: 96px;
-    --pedal-height: 120px;
-    --pedal-top: 142px;
-    --pedal-gap: 10px;
-    --stick-image: url("./assets/analogico-oni.png?v=1");
-    /* Os arquivos ficam cruzados porque a arte original dos pedais veio espelhada. */
-    --left-pedal-image: url("./assets/pedal-direito-oni.png?v=1");
-    --right-pedal-image: url("./assets/pedal-esquerdo-oni.png?v=1");
+    --stick-size: 66px;
+    --stick-top: 72px;
+    --left-stick-left: 152px;
+    --right-stick-left: 282px;
+    --pedal-width: 68px;
+    --pedal-height: 155px;
+    --pedal-top: 27px;
+    --pedal-gap: 24px;
+    --stick-image: url("./assets/analogico-preto.png?v=2");
+    --left-pedal-image: url("./assets/pedal-branco.png?v=2");
+    --right-pedal-image: url("./assets/pedal-branco.png?v=2");
 }
 
 html,
@@ -61,7 +60,7 @@ body {
 .custom .sticks {
     display: block !important;
     position: absolute !important;
-    inset: 92px auto auto 0 !important;
+    inset: 0 auto auto 0 !important;
     width: var(--overlay-width) !important;
     height: var(--overlay-height) !important;
     margin: 0 !important;
@@ -103,7 +102,7 @@ body {
     position: absolute;
     inset: 0;
     background: var(--stick-image) center / contain no-repeat;
-    filter: drop-shadow(0 0 7px rgba(205, 0, 18, 0.78));
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.72));
     pointer-events: none;
 }
 
@@ -166,7 +165,7 @@ body {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    filter: drop-shadow(0 0 6px rgba(205, 0, 18, 0.7));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
     pointer-events: none;
 }
 
@@ -176,6 +175,7 @@ body {
 
 .custom .trigger.right::before {
     background-image: var(--right-pedal-image);
+    transform: scaleX(-1);
 }
 
 .custom .trigger[data-value="0"],
@@ -201,13 +201,13 @@ body {
     display: none !important;
 }
 
-@media (max-width: 499px), (max-height: 279px) {
+@media (max-width: 499px), (max-height: 209px) {
     :root {
         --overlay-scale: 0.75;
     }
 }
 
-@media (max-width: 374px), (max-height: 209px) {
+@media (max-width: 374px), (max-height: 156px) {
     :root {
         --overlay-scale: 0.55;
     }
