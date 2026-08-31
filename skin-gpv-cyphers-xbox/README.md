@@ -1,6 +1,6 @@
 # Cyphers Xbox completo
 
-Skin integral para o layout Xbox do Gamepad Viewer, baseada na geometria nativa de 750 x 630 px.
+Skin integral e minimalista para o layout Xbox do Gamepad Viewer, baseada na geometria nativa de 750 x 630 px. A arte Oni/Cyphers foi adaptada e recortada pela silhueta do controle, com acabamento preto fosco e vermelho discreto.
 
 ## Retorno visual
 
@@ -17,3 +17,4 @@ O corpo utiliza os SVGs nativos do Gamepad Viewer armazenados localmente em `ass
 ## Uso
 
 Use uma fonte de navegador de **750 x 630 px** ou maior. Inclua `smeter=1` para os gatilhos analogicos e `nocurve=1` para impedir inclinacao 3D dos analogicos.
+
