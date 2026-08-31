@@ -12,6 +12,8 @@ Skin integral para o layout Xbox do Gamepad Viewer, baseada na geometria nativa 
 - View/Back e Menu/Start.
 - Botao central/meta.
 
+Todos os estados de ativacao usam vermelho Cyphers, incluindo gatilhos, bumpers, ABXY, direcionais, botoes centrais e cliques dos analogicos.
+
 O corpo utiliza os SVGs nativos do Gamepad Viewer armazenados localmente em `assets/xbox`, garantindo que os estados interativos coincidam com a estrutura real do site. Os analogicos continuam com aro vermelho, centro preto texturizado e gravacao ornamental sem texto. O antigo botao central com a letra C foi removido e substituido por um emblema Xbox/Oni.
 
 ## Uso

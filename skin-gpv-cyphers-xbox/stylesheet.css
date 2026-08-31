@@ -1,5 +1,5 @@
 /* Cyphers Xbox completo: corpo integral e retorno de todos os botoes. */
-:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --cyphers-red: #e31324; --cyphers-bright: #ff3344; --cyphers-glow: rgba(227, 19, 36, .78); }
+:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --cyphers-red: #e31324; --cyphers-bright: #ff3344; --cyphers-glow: rgba(227, 19, 36, .78); --active-red: brightness(0) saturate(100%) invert(16%) sepia(99%) saturate(6674%) hue-rotate(351deg) brightness(108%) contrast(116%); }
 html, body { width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: transparent !important; }
 .controller.custom { display: none !important; position: absolute !important; left: 50% !important; top: 50% !important; width: var(--controller-width) !important; height: var(--controller-height) !important; margin: 0 !important; transform: translate(-50%, -50%) scale(var(--controller-scale)) !important; transform-origin: center !important; background: url("./assets/xbox/base.svg?v=4") center / contain no-repeat !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; z-index: 9999 !important; filter: drop-shadow(0 0 4px rgba(0,0,0,.9)) drop-shadow(0 0 7px rgba(227,19,36,.38)); }
 .controller.custom::before { content: ""; position: absolute; left: 72px; top: 255px; width: 606px; height: 202px; z-index: 1; background: url("./assets/wordmark-cyphers-brush.png?v=6") center / contain no-repeat; opacity: .52; filter: drop-shadow(0 2px 1px #180003) drop-shadow(0 0 4px rgba(227,19,36,.28)); transform: rotate(-8deg); -webkit-mask: url("./assets/xbox/base.svg?v=6") -72px -255px / 750px 630px no-repeat; mask: url("./assets/xbox/base.svg?v=6") -72px -255px / 750px 630px no-repeat; pointer-events: none; }
@@ -8,25 +8,25 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 
 /* LT e RT analogicos. */
 .custom .triggers { display: block !important; position: absolute !important; left: 152px !important; top: 0 !important; width: 446px !important; height: 121px !important; z-index: 3; }
-.custom .trigger { display: block !important; position: absolute !important; top: 0 !important; width: 88px !important; height: 121px !important; margin: 0 !important; background: url("./assets/xbox/trigger.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 7px var(--cyphers-glow)); opacity: 0; }
+.custom .trigger { display: block !important; position: absolute !important; top: 0 !important; width: 88px !important; height: 121px !important; margin: 0 !important; background: url("./assets/xbox/trigger.svg?v=2") no-repeat !important; filter: var(--active-red) drop-shadow(0 0 7px var(--cyphers-glow)); opacity: 0; }
 .custom .trigger.left { left: 0 !important; }
 .custom .trigger.right { right: 0 !important; transform: rotateY(180deg) !important; }
 .custom .trigger-button { display: none !important; }
 
 /* LB e RB. */
 .custom .bumpers { display: block !important; position: absolute !important; left: 107px !important; top: 129px !important; width: 536px !important; height: 61px !important; z-index: 3; }
-.custom .bumper { display: block !important; position: absolute !important; top: 0 !important; width: 170px !important; height: 61px !important; background: url("./assets/xbox/bumper.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 6px var(--cyphers-glow)); opacity: 0; }
+.custom .bumper { display: block !important; position: absolute !important; top: 0 !important; width: 170px !important; height: 61px !important; background: url("./assets/xbox/bumper.svg?v=2") no-repeat !important; filter: var(--active-red) drop-shadow(0 0 6px var(--cyphers-glow)); opacity: 0; }
 .custom .bumper.left { left: 0 !important; }
 .custom .bumper.right { right: 0 !important; transform: rotateY(180deg) !important; }
 .custom .bumper.pressed { opacity: 1 !important; }
 
 /* View, Menu e botao central. */
 .custom .arrows { display: block !important; position: absolute !important; left: 306px !important; top: 264px !important; width: 141px !important; height: 33px !important; z-index: 3; }
-.custom .back, .custom .start { display: block !important; position: absolute !important; top: 0 !important; width: 33px !important; height: 33px !important; background: url("./assets/xbox/start-select.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 5px var(--cyphers-glow)); opacity: 0; }
+.custom .back, .custom .start { display: block !important; position: absolute !important; top: 0 !important; width: 33px !important; height: 33px !important; background: url("./assets/xbox/start-select.svg?v=2") no-repeat !important; filter: var(--active-red) drop-shadow(0 0 5px var(--cyphers-glow)); opacity: 0; }
 .custom .back { left: 0 !important; }
 .custom .start { right: 0 !important; background-position: 33px 0 !important; }
 .custom .back.pressed, .custom .start.pressed { opacity: 1 !important; }
-.custom .meta { display: block !important; position: absolute !important; left: 343px !important; top: 158px !important; width: 64px !important; height: 64px !important; box-sizing: border-box !important; border: 0 !important; border-radius: 50% !important; background: url("./assets/emblema-xbox-oni.png?v=6") center / contain no-repeat !important; box-shadow: 0 0 7px rgba(227,19,36,.52); z-index: 4; }
+.custom .meta { display: block !important; position: absolute !important; left: 341px !important; top: 164px !important; width: 68px !important; height: 68px !important; box-sizing: border-box !important; border: 0 !important; border-radius: 50% !important; background: url("./assets/emblema-xbox-oni.png?v=7") center / contain no-repeat !important; box-shadow: 0 0 7px rgba(227,19,36,.52); z-index: 4; }
 .custom .meta::before, .custom .meta::after { content: none !important; display: none !important; }
 .custom .meta.pressed { filter: brightness(1.35) !important; transform: translateY(3px) scale(.94) !important; box-shadow: 0 0 13px var(--cyphers-bright) !important; }
 .custom .quadrant { display: none !important; }
@@ -34,7 +34,7 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 /* A, B, X e Y. */
 .custom .abxy { display: block !important; position: absolute !important; left: 488px !important; top: 192px !important; width: 153px !important; height: 156px !important; z-index: 3; }
 .custom .button { display: block !important; position: absolute !important; width: 48px !important; height: 48px !important; background-image: url("./assets/xbox/abxy.svg?v=2") !important; filter: drop-shadow(0 0 3px #000); }
-.custom .button.pressed { background-position-y: -48px !important; margin-top: 5px !important; filter: drop-shadow(0 0 9px var(--cyphers-bright)) brightness(1.3); }
+.custom .button.pressed { background-position-y: -48px !important; margin-top: 5px !important; filter: var(--active-red) drop-shadow(0 0 9px var(--cyphers-bright)); }
 .custom .a { left: 55px !important; top: 108px !important; background-position: 0 0 !important; }
 .custom .b { right: 0 !important; top: 58px !important; background-position: -49px 0 !important; }
 .custom .x { left: 4px !important; top: 58px !important; background-position: -98px 0 !important; }
@@ -49,14 +49,14 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 .custom .stick { display: block !important; position: absolute !important; width: 83px !important; height: 83px !important; margin: 0; transform: none !important; border-radius: 50% !important; background: url("./assets/analogico-oni-sem-texto.png?v=4") center / contain no-repeat !important; filter: drop-shadow(0 0 4px rgba(227,19,36,.65)); }
 .custom .stick.left { left: 0 !important; top: 0 !important; }
 .custom .stick.right { left: 288px !important; top: 113px !important; }
-.custom .stick.pressed { filter: brightness(1.35) drop-shadow(0 0 13px var(--cyphers-bright)); }
+.custom .stick.pressed { filter: saturate(1.45) brightness(1.2) drop-shadow(0 0 13px var(--cyphers-bright)); }
 .custom .stick::before, .custom .stick::after { content: none !important; display: none !important; }
 .custom .wheels, .custom .wheel { display: none !important; }
 
 /* Direcional: a base faz parte do corpo; cada sentido acende separadamente. */
 .custom .dpad { display: block !important; position: absolute !important; left: 223px !important; top: 345px !important; width: 110px !important; height: 111px !important; z-index: 3; }
 .custom .dpad::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(#0b0b0d, #151316); clip-path: polygon(35% 0,65% 0,65% 35%,100% 35%,100% 65%,65% 65%,65% 100%,35% 100%,35% 65%,0 65%,0 35%,35% 35%); border-radius: 8px; box-shadow: inset 0 0 0 3px #050506, inset 0 0 10px #000, 0 0 5px rgba(102,5,14,.28); pointer-events: none; }
-.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/xbox/dpad.svg?v=2") !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 8px var(--cyphers-bright)); opacity: 0; }
+.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/xbox/dpad.svg?v=2") !important; filter: var(--active-red) drop-shadow(0 0 8px var(--cyphers-bright)); opacity: 0; }
 .custom .face.pressed { opacity: 1 !important; }
 .custom .face.up { left: 38px !important; top: 0 !important; width: 34px !important; height: 56px !important; background-position: 34px 0 !important; }
 .custom .face.down { left: 38px !important; bottom: 0 !important; width: 34px !important; height: 56px !important; }
