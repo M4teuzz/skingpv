@@ -26,8 +26,8 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 .custom .back { left: 0 !important; }
 .custom .start { right: 0 !important; background-position: 33px 0 !important; }
 .custom .back.pressed, .custom .start.pressed { opacity: 1 !important; }
-.custom .meta { display: block !important; position: absolute !important; left: 341px !important; top: 164px !important; width: 68px !important; height: 68px !important; box-sizing: border-box !important; border: 0 !important; border-radius: 50% !important; background: url("./assets/emblema-xbox-oni.png?v=7") center / contain no-repeat !important; box-shadow: 0 0 7px rgba(227,19,36,.52); z-index: 4; }
-.custom .meta::before { content: "" !important; display: block !important; position: absolute !important; inset: -7px !important; z-index: -1 !important; border-radius: 50% !important; background: #08090b !important; box-shadow: 0 0 7px rgba(0,0,0,.95) !important; }
+.custom .meta { display: block !important; position: absolute !important; left: 334px !important; top: 157px !important; width: 82px !important; height: 82px !important; box-sizing: border-box !important; border: 0 !important; border-radius: 50% !important; background: url("./assets/emblema-xbox-oni.png?v=8") center / contain no-repeat !important; box-shadow: 0 0 7px rgba(227,19,36,.52); z-index: 4; }
+.custom .meta::before { content: "" !important; display: block !important; position: absolute !important; inset: 0 !important; z-index: -1 !important; border-radius: 50% !important; background: #08090b !important; box-shadow: 0 0 7px rgba(0,0,0,.95) !important; }
 .custom .meta::after { content: none !important; display: none !important; }
 .custom .meta.pressed { filter: brightness(1.35) !important; transform: translateY(3px) scale(.94) !important; box-shadow: 0 0 13px var(--cyphers-bright) !important; }
 .custom .quadrant { display: none !important; }
