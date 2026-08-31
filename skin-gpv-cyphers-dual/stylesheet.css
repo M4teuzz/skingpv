@@ -12,7 +12,7 @@
     --pedal-height: 155px;
     --pedal-top: 27px;
     --pedal-gap: 24px;
-    --stick-image: url("./assets/analogico-preto.png?v=2");
+    --stick-image: url("./assets/analogico-cyphers-minimal.png?v=4");
     --left-pedal-image: url("./assets/pedal-oni-curvo.png?v=3");
     --right-pedal-image: url("./assets/pedal-oni-curvo.png?v=3");
 }
@@ -171,11 +171,12 @@ body {
 
 .custom .trigger.left::before {
     background-image: var(--left-pedal-image);
+    transform: scaleX(-1);
 }
 
 .custom .trigger.right::before {
     background-image: var(--right-pedal-image);
-    transform: scaleX(-1);
+    transform: none;
 }
 
 .custom .trigger[data-value="0"],

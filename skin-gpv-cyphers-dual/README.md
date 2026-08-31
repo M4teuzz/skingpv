@@ -1,6 +1,6 @@
 # Cyphers Dual
 
-Variante do overlay Cyphers inspirada em um painel de controle: dois pedais com silhueta arredondada/trapezoidal e acabamento Oni preto/vermelho, além de dois analogicos pretos compactos alinhados horizontalmente.
+Variante do overlay Cyphers inspirada em um painel de controle: dois pedais com silhueta arredondada/trapezoidal e acabamento Oni preto/vermelho, além de dois analogicos minimalistas com o nome CYPHERS, alinhados horizontalmente.
 
 ## Controles exibidos
 
@@ -23,4 +23,4 @@ Use `nocurve=1` na URL. O CSS tambem força `transform: none` nos sticks para im
 
 As medidas e URLs dos assets ficam nas variaveis do bloco `:root` no inicio de `stylesheet.css`.
 
-Os assets atuais sao `analogico-preto.png` e `pedal-oni-curvo.png`. O mesmo pedal e espelhado pelo CSS no lado direito, garantindo simetria. Os assets anteriores foram preservados na pasta para permitir retorno a outras aparencias.
+Os assets atuais sao `analogico-cyphers-minimal.png` e `pedal-oni-curvo.png`. O mesmo pedal e espelhado pelo CSS no lado esquerdo, corrigindo a orientacao. Os assets anteriores foram preservados na pasta para permitir retorno a outras aparencias.
