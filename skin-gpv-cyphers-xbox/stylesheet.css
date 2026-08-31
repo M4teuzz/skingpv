@@ -1,216 +1,68 @@
-/* Cyphers Xbox: analogicos assimetricos e dois pedais. */
+/* Cyphers Xbox completo: corpo integral e retorno de todos os botoes. */
+:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --cyphers-red: #e31324; --cyphers-bright: #ff3344; --cyphers-glow: rgba(227, 19, 36, .78); }
+html, body { width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: transparent !important; }
+.controller.custom { display: none !important; position: absolute !important; left: 50% !important; top: 50% !important; width: var(--controller-width) !important; height: var(--controller-height) !important; margin: 0 !important; transform: translate(-50%, -50%) scale(var(--controller-scale)) !important; transform-origin: center !important; background: none !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; z-index: 9999 !important; }
+.controller.custom::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("./assets/xbox/base.svg?v=2") center / contain no-repeat; filter: drop-shadow(0 0 4px rgba(0,0,0,.9)) drop-shadow(0 0 11px var(--cyphers-glow)); pointer-events: none; }
+.controller.custom::after { content: "CYPHERS"; position: absolute; left: 250px; top: 198px; width: 250px; color: var(--cyphers-red); font: italic 900 22px/1 Arial, sans-serif; letter-spacing: 4px; text-align: center; text-shadow: 0 0 5px #000, 0 0 9px var(--cyphers-red); pointer-events: none; }
+.controller.custom:not(.disconnected), #gamepad-0.controller.custom.disconnected { display: block !important; }
 
-:root {
-    --overlay-width: 560px;
-    --overlay-height: 320px;
-    --overlay-scale: 1;
-    --stick-size: 104px;
-    --left-stick-top: 26px;
-    --right-stick-top: 79px;
-    --left-stick-left: 106px;
-    --right-stick-left: 296px;
-    --pedal-width: 102px;
-    --pedal-height: 132px;
-    --pedal-top: 170px;
-    --pedal-gap: 12px;
-    --stick-image: url("./assets/analogico-oni.png?v=1");
-    /* Os arquivos ficam cruzados porque a arte original dos pedais veio espelhada. */
-    --left-pedal-image: url("./assets/pedal-direito-oni.png?v=1");
-    --right-pedal-image: url("./assets/pedal-esquerdo-oni.png?v=1");
-}
+/* LT e RT analogicos. */
+.custom .triggers { display: block !important; position: absolute !important; left: 152px !important; top: 0 !important; width: 446px !important; height: 121px !important; }
+.custom .trigger { display: block !important; position: absolute !important; top: 0 !important; width: 88px !important; height: 121px !important; margin: 0 !important; background: url("./assets/xbox/trigger.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 7px var(--cyphers-glow)); opacity: 0; }
+.custom .trigger.left { left: 0 !important; }
+.custom .trigger.right { right: 0 !important; transform: rotateY(180deg) !important; }
+.custom .trigger-button { display: none !important; }
 
-html,
-body {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    background: transparent !important;
-}
+/* LB e RB. */
+.custom .bumpers { display: block !important; position: absolute !important; left: 107px !important; top: 129px !important; width: 536px !important; height: 61px !important; }
+.custom .bumper { display: block !important; position: absolute !important; top: 0 !important; width: 170px !important; height: 61px !important; background: url("./assets/xbox/bumper.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 6px var(--cyphers-glow)); opacity: 0; }
+.custom .bumper.left { left: 0 !important; }
+.custom .bumper.right { right: 0 !important; transform: rotateY(180deg) !important; }
+.custom .bumper.pressed { opacity: 1 !important; }
 
-.controller.custom {
-    display: none !important;
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    width: var(--overlay-width) !important;
-    height: var(--overlay-height) !important;
-    margin: 0 !important;
-    transform: translate(-50%, -50%) scale(var(--overlay-scale)) !important;
-    transform-origin: center !important;
-    background: none !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 9999 !important;
-}
+/* View, Menu e botao central. */
+.custom .arrows { display: block !important; position: absolute !important; left: 306px !important; top: 264px !important; width: 141px !important; height: 33px !important; }
+.custom .back, .custom .start { display: block !important; position: absolute !important; top: 0 !important; width: 33px !important; height: 33px !important; background: url("./assets/xbox/start-select.svg?v=2") no-repeat !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 5px var(--cyphers-glow)); opacity: 0; }
+.custom .back { left: 0 !important; }
+.custom .start { right: 0 !important; background-position: 33px 0 !important; }
+.custom .back.pressed, .custom .start.pressed { opacity: 1 !important; }
+.custom .meta { display: block !important; position: absolute !important; left: 351px !important; top: 246px !important; width: 48px !important; height: 48px !important; box-sizing: border-box !important; border: 3px solid #351015 !important; border-radius: 50% !important; background: #09090b !important; box-shadow: inset 0 0 8px #000, 0 0 3px rgba(227,19,36,.35); }
+.custom .meta::before { content: "C"; display: grid; width: 100%; height: 100%; place-items: center; color: #89131d; font: italic 900 24px/1 Arial, sans-serif; }
+.custom .meta.pressed { border-color: var(--cyphers-bright) !important; box-shadow: inset 0 0 9px #74000a, 0 0 13px var(--cyphers-red) !important; }
+.custom .meta.pressed::before { color: #fff; }
+.custom .quadrant { display: none !important; }
 
-.controller.custom:not(.disconnected),
-#gamepad-0.controller.custom.disconnected {
-    display: block !important;
-}
+/* A, B, X e Y. */
+.custom .abxy { display: block !important; position: absolute !important; left: 488px !important; top: 192px !important; width: 153px !important; height: 156px !important; }
+.custom .button { display: block !important; position: absolute !important; width: 48px !important; height: 48px !important; background-image: url("./assets/xbox/abxy.svg?v=2") !important; filter: drop-shadow(0 0 3px #000); }
+.custom .button.pressed { background-position-y: -48px !important; margin-top: 5px !important; filter: drop-shadow(0 0 9px var(--cyphers-bright)) brightness(1.3); }
+.custom .a { left: 55px !important; top: 108px !important; background-position: 0 0 !important; }
+.custom .b { right: 0 !important; top: 58px !important; background-position: -49px 0 !important; }
+.custom .x { left: 4px !important; top: 58px !important; background-position: -98px 0 !important; }
+.custom .y { left: 55px !important; top: 7px !important; background-position: 48px 0 !important; }
+.custom .a.pressed { background-position: 0 -48px !important; }
+.custom .b.pressed { background-position: -49px -48px !important; }
+.custom .x.pressed { background-position: -98px -48px !important; }
+.custom .y.pressed { background-position: 48px -48px !important; }
 
-.custom.disconnected .stick {
-    display: block !important;
-}
+/* Analogicos assimetricos, movimento e clique L3/R3. */
+.custom .sticks { display: block !important; position: absolute !important; left: 144px !important; top: 239px !important; width: 371px !important; height: 196px !important; }
+.custom .stick { display: block !important; position: absolute !important; width: 83px !important; height: 83px !important; margin: 0; transform: none !important; border-radius: 50% !important; background: url("./assets/analogico-oni.png?v=2") center / contain no-repeat !important; filter: drop-shadow(0 0 5px var(--cyphers-glow)); }
+.custom .stick.left { left: 0 !important; top: 0 !important; }
+.custom .stick.right { left: 288px !important; top: 113px !important; }
+.custom .stick.pressed { filter: brightness(1.35) drop-shadow(0 0 13px var(--cyphers-bright)); }
+.custom .stick::before, .custom .stick::after { content: none !important; display: none !important; }
+.custom .wheels, .custom .wheel { display: none !important; }
 
-.custom.disconnected .trigger {
-    opacity: 0 !important;
-}
+/* Direcional: a base faz parte do corpo; cada sentido acende separadamente. */
+.custom .dpad { display: block !important; position: absolute !important; left: 223px !important; top: 345px !important; width: 110px !important; height: 111px !important; }
+.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/xbox/dpad.svg?v=2") !important; filter: sepia(1) saturate(7) hue-rotate(320deg) drop-shadow(0 0 8px var(--cyphers-bright)); opacity: 0; }
+.custom .face.pressed { opacity: 1 !important; }
+.custom .face.up { left: 38px !important; top: 0 !important; width: 34px !important; height: 56px !important; background-position: 34px 0 !important; }
+.custom .face.down { left: 38px !important; bottom: 0 !important; width: 34px !important; height: 56px !important; }
+.custom .face.left { left: 0 !important; top: 38px !important; width: 55px !important; height: 35px !important; background-position: 0 -93px !important; }
+.custom .face.right { right: 0 !important; top: 38px !important; width: 55px !important; height: 35px !important; background-position: 0 -57px !important; }
+.custom .touchpad, .custom .fstick, .custom .speaker { display: none !important; }
 
-.custom .sticks {
-    display: block !important;
-    position: absolute !important;
-    inset: 70px auto auto 0 !important;
-    width: var(--overlay-width) !important;
-    height: var(--overlay-height) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    overflow: visible !important;
-}
-
-.custom .stick.left,
-.custom .stick.right {
-    display: block !important;
-    position: absolute !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: var(--stick-size) !important;
-    height: var(--stick-size) !important;
-    float: none !important;
-    transform: none !important;
-    background: none !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    overflow: visible !important;
-}
-
-.custom .stick.left {
-    left: var(--left-stick-left) !important;
-    top: var(--left-stick-top) !important;
-}
-
-.custom .stick.right {
-    left: var(--right-stick-left) !important;
-    top: var(--right-stick-top) !important;
-}
-
-.custom .stick.left::before,
-.custom .stick.right::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: var(--stick-image) center / contain no-repeat;
-    filter: drop-shadow(0 0 7px rgba(205, 0, 18, 0.78));
-    pointer-events: none;
-}
-
-.custom .stick.left::after,
-.custom .stick.right::after {
-    content: none !important;
-    display: none !important;
-}
-
-.custom .wheels,
-.custom .wheel {
-    display: none !important;
-}
-
-.custom .triggers {
-    display: block !important;
-    position: absolute !important;
-    inset: 0 auto auto 0 !important;
-    width: var(--overlay-width) !important;
-    height: var(--overlay-height) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    overflow: visible !important;
-}
-
-.custom .trigger {
-    display: block !important;
-    position: absolute !important;
-    top: var(--pedal-top) !important;
-    bottom: auto !important;
-    width: var(--pedal-width) !important;
-    height: var(--pedal-height) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    transform: none !important;
-    overflow: visible !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    background: none !important;
-    opacity: 0;
-}
-
-.custom .trigger.left {
-    left: var(--pedal-gap) !important;
-    right: auto !important;
-}
-
-.custom .trigger.right {
-    right: var(--pedal-gap) !important;
-    left: auto !important;
-}
-
-.custom .trigger::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: drop-shadow(0 0 6px rgba(205, 0, 18, 0.7));
-    pointer-events: none;
-}
-
-.custom .trigger.left::before {
-    background-image: var(--left-pedal-image);
-}
-
-.custom .trigger.right::before {
-    background-image: var(--right-pedal-image);
-}
-
-.custom .trigger[data-value="0"],
-.custom .trigger[data-value="0.0"],
-.custom .trigger[data-value="0.00"] {
-    opacity: 0 !important;
-}
-
-.custom .quadrant,
-.custom .bumpers,
-.custom .bumper,
-.custom .arrows,
-.custom .back,
-.custom .start,
-.custom .abxy,
-.custom .button,
-.custom .dpad,
-.custom .face,
-.custom .touchpad,
-.custom .meta,
-.custom .speaker,
-.custom .trigger-button {
-    display: none !important;
-}
-
-@media (max-width: 559px), (max-height: 319px) {
-    :root {
-        --overlay-scale: 0.75;
-    }
-}
-
-@media (max-width: 419px), (max-height: 239px) {
-    :root {
-        --overlay-scale: 0.55;
-    }
-}
+@media (max-width: 749px), (max-height: 629px) { :root { --controller-scale: .75; } }
+@media (max-width: 559px), (max-height: 471px) { :root { --controller-scale: .55; } }

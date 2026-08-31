@@ -1,14 +1,19 @@
-# Cyphers Xbox
+# Cyphers Xbox completo
 
-Overlay Oni/Cyphers adaptado ao arranjo assimetrico dos controles Xbox.
+Skin integral para o layout Xbox do Gamepad Viewer, baseada na geometria nativa de 750 x 630 px.
 
-## Layout
+## Retorno visual
 
-- Analogico esquerdo na regiao superior esquerda.
-- Analogico direito deslocado para baixo e para a direita.
-- LT e RT representados pelos pedais laterais.
-- Tamanho recomendado da fonte de navegador: **560 x 320 px**.
+- LT e RT analogicos.
+- LB e RB.
+- Analogicos esquerdo e direito, movimento e clique L3/R3.
+- Direcional para cima, baixo, esquerda e direita.
+- A, B, X e Y.
+- View/Back e Menu/Start.
+- Botao central/meta.
 
-Cada analogico responde independentemente aos eixos `stick-1` e `stick-2`. A inclinacao 3D e bloqueada no CSS; ainda assim, use `nocurve=1` no link do Gamepad Viewer.
+O corpo utiliza os SVGs nativos do Gamepad Viewer armazenados localmente em `assets/xbox`, garantindo que os estados interativos coincidam com a estrutura real do site. A identidade Cyphers e aplicada por brilho carmesim, marca central e analogicos Oni.
 
-As medidas podem ser refinadas no bloco `:root` de `stylesheet.css`.
+## Uso
+
+Use uma fonte de navegador de **750 x 630 px** ou maior. Inclua `smeter=1` para os gatilhos analogicos e `nocurve=1` para impedir inclinacao 3D dos analogicos.
