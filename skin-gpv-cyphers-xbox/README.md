@@ -1,6 +1,6 @@
 # Cyphers Xbox completo
 
-Skin integral e minimalista para o layout Xbox do Gamepad Viewer, baseada na geometria nativa de 750 x 630 px. A arte Oni/Cyphers foi adaptada e recortada pela silhueta do controle, com acabamento preto fosco e vermelho discreto.
+Skin integral e minimalista para o layout Xbox do Gamepad Viewer, baseada na geometria nativa de 750 x 630 px. Mantem o formato original do controle e usa apenas a linguagem visual das referencias: preto fosco, detalhes ornamentais discretos e iluminacao vermelha. O nome CYPHERS atravessa o corpo por baixo de todos os comandos.
 
 ## Retorno visual
 
@@ -12,7 +12,7 @@ Skin integral e minimalista para o layout Xbox do Gamepad Viewer, baseada na geo
 - View/Back e Menu/Start.
 - Botao central/meta.
 
-O corpo utiliza os SVGs nativos do Gamepad Viewer armazenados localmente em `assets/xbox`, garantindo que os estados interativos coincidam com a estrutura real do site. A identidade Cyphers e aplicada por brilho carmesim, marca central e analogicos Oni.
+O corpo utiliza os SVGs nativos do Gamepad Viewer armazenados localmente em `assets/xbox`, garantindo que os estados interativos coincidam com a estrutura real do site. Os analogicos usam aro vermelho, centro preto texturizado e gravacao ornamental sem texto.
 
 ## Uso
 
