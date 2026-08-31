@@ -6,12 +6,12 @@
     --overlay-scale: 1;
     --stick-size: 66px;
     --stick-top: 72px;
-    --left-stick-left: 152px;
-    --right-stick-left: 282px;
+    --left-stick-left: 177px;
+    --right-stick-left: 257px;
     --pedal-width: 68px;
     --pedal-height: 155px;
     --pedal-top: 27px;
-    --pedal-gap: 24px;
+    --pedal-gap: 95px;
     --stick-image: url("./assets/analogico-cyphers-minimal.png?v=4");
     --left-pedal-image: url("./assets/pedal-oni-curvo.png?v=3");
     --right-pedal-image: url("./assets/pedal-oni-curvo.png?v=3");

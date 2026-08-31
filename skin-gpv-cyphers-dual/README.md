@@ -9,7 +9,9 @@ Variante do overlay Cyphers inspirada em um painel de controle: dois pedais com 
 - Pedal esquerdo: LT.
 - Pedal direito: RT.
 
-Os dois analogicos usam o mesmo asset Oni, mas cada elemento recebe independentemente os eixos correspondentes do Gamepad Viewer.
+Os dois analogicos usam o mesmo asset Cyphers minimalista, mas cada elemento recebe independentemente os eixos correspondentes do Gamepad Viewer.
+
+Os quatro elementos ficam centralizados com aproximadamente 14 px de espaco horizontal entre cada pedal e analogico em repouso.
 
 ## Uso
 
