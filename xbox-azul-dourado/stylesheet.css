@@ -1,5 +1,5 @@
 /* Xbox azul e dourado — geometria nativa, botoes ABXY circulares. */
-:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --accent: #ffc83d; --highlight: #ff7900; --glow: rgba(255,112,0,.8); --active: brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(2792%) hue-rotate(359deg) brightness(103%) contrast(107%); }
+:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --accent: #ffc83d; --highlight: #eda519; --glow: rgba(237,165,25,.75); --active: brightness(1); }
 html, body { width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: transparent !important; }
 .controller.custom { display: none !important; position: absolute !important; left: 50% !important; top: 50% !important; width: var(--controller-width) !important; height: var(--controller-height) !important; margin: 0 !important; transform: translate(-50%, -50%) scale(var(--controller-scale)) !important; transform-origin: center !important; background: url("./assets/base.svg?v=4") center / contain no-repeat !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; z-index: 9999 !important; filter: drop-shadow(0 7px 8px rgba(0,0,0,.55)); }
 .controller.custom:not(.disconnected), #gamepad-0.controller.custom.disconnected { display: block !important; }
@@ -24,10 +24,10 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 .custom .back { left: 0 !important; }
 .custom .start { right: 0 !important; background-position: 33px 0 !important; }
 .custom .back.pressed, .custom .start.pressed { opacity: 1 !important; }
-.custom .meta { display: block !important; position: absolute !important; left: 326px !important; top: 145px !important; width: 98px !important; height: 98px !important; box-sizing: border-box !important; border: 1px solid rgba(255,255,255,.78) !important; border-radius: 50% !important; background-color: transparent !important; background-image: url("./assets/nos-cilindro.png?v=1") !important; background-position: center !important; background-size: contain !important; background-repeat: no-repeat !important; box-shadow: inset 0 0 0 2px rgba(35,35,35,.85), 0 0 7px rgba(255,255,255,.52); z-index: 4; }
+.custom .meta { display: block !important; position: absolute !important; left: 331px !important; top: 153px !important; width: 88px !important; height: 88px !important; box-sizing: border-box !important; border: 1px solid rgba(255,255,255,.78) !important; border-radius: 50% !important; background-color: transparent !important; background-image: url("./assets/nos-cilindro.png?v=1") !important; background-position: center !important; background-size: contain !important; background-repeat: no-repeat !important; box-shadow: inset 0 0 0 2px rgba(35,35,35,.85), 0 0 7px rgba(255,255,255,.52); z-index: 4; }
 .custom .meta::before { content: none !important; display: none !important; }
 .custom .meta::after { content: none !important; display: none !important; }
-.custom .meta.pressed { filter: brightness(1.15) drop-shadow(0 0 7px var(--glow)) !important; transform: translateY(3px) rotate(90deg) scale(.94) !important; box-shadow: none !important; }
+.custom .meta.pressed { filter: brightness(1.15) drop-shadow(0 0 7px var(--glow)) !important; transform: translateY(1px) rotate(72deg) scale(.94) !important; box-shadow: none !important; }
 .custom .quadrant { display: none !important; }
 
 /* A, B, X e Y. */
@@ -54,7 +54,7 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 
 /* Direcional: a base faz parte do corpo; cada sentido acende separadamente. */
 .custom .dpad { display: block !important; position: absolute !important; left: 223px !important; top: 345px !important; width: 110px !important; height: 111px !important; z-index: 3; }
-.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/dpad.svg?v=2") !important; filter: var(--active) drop-shadow(0 0 8px var(--highlight)); opacity: 0; }
+.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/dpad-gold.svg?v=1") !important; filter: var(--active) drop-shadow(0 0 8px var(--highlight)); opacity: 0; }
 .custom .face.pressed { opacity: 1 !important; }
 .custom .face.up { left: 38px !important; top: 0 !important; width: 34px !important; height: 56px !important; background-position: 34px 0 !important; }
 .custom .face.down { left: 38px !important; bottom: 0 !important; width: 34px !important; height: 56px !important; }
@@ -73,12 +73,12 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 .custom .stick.left { left: -8px !important; top: -8px !important; }
 .custom .stick.right { left: 280px !important; top: 105px !important; }
 .custom .stick.pressed { background-image: url("./assets/stick-pressed.svg") !important; filter: drop-shadow(0 0 9px var(--glow)); }
-.custom .meta { border: 0 !important; border-radius: 0 !important; box-shadow: none; transform: rotate(90deg) !important; filter: drop-shadow(0 2px 2px #050c20); }
+.custom .meta { border: 0 !important; border-radius: 0 !important; box-shadow: none; transform: rotate(72deg) !important; filter: drop-shadow(0 2px 2px #050c20); }
 .custom .back, .custom .start { opacity: 1; border-radius: 50%; box-sizing: border-box; border: 2px solid #151720; background: linear-gradient(145deg,#ffeaa0,#ffbd22 55%,#b87508) !important; filter: drop-shadow(0 2px 2px #061435); }
 .custom .back::after { content: ''; position: absolute; left: 10px; top: 10px; width: 10px; height: 8px; border: 2px solid #28200c; }
 .custom .back::before { content: ''; position: absolute; left: 6px; top: 6px; width: 9px; height: 7px; border: 2px solid #28200c; }
 .custom .start::after { content: ''; position: absolute; left: 7px; top: 8px; width: 15px; height: 2px; background: #28200c; box-shadow: 0 5px #28200c,0 10px #28200c; }
-.custom .back.pressed, .custom .start.pressed { background: linear-gradient(145deg,#ffae45,#ff7900 55%,#c34c00) !important; filter: drop-shadow(0 0 6px var(--glow)); }
+.custom .back.pressed, .custom .start.pressed { background: linear-gradient(145deg,#fff2ab,#ffcf44 28%,#eda519 65%,#a76006) !important; filter: drop-shadow(0 0 6px var(--glow)); }
 .custom .bumper { opacity: 1; filter: drop-shadow(0 1px 2px #121a30); }
 .custom .bumper.pressed { filter: var(--active) drop-shadow(0 0 8px var(--highlight)); }
 /* White trigger silhouettes stay visible while GPV drives overlay opacity. */
@@ -86,3 +86,7 @@ html, body { width: 100% !important; height: 100% !important; margin: 0 !importa
 .custom .triggers::before { left: 0; }
 .custom .triggers::after { right: 0; transform: rotateY(180deg); }
 .custom .trigger { z-index: 1; filter: var(--active) drop-shadow(0 0 8px var(--highlight)); }
+
+/* Ativacao usa o mesmo gradiente dourado da cruz da carcaca. */
+.custom .trigger { background-image: url("./assets/trigger-gold.svg?v=1") !important; }
+.custom .bumper.pressed { background-image: url("./assets/bumper-gold.svg?v=1") !important; }

@@ -12,4 +12,4 @@ Abra **preview.html** no navegador. O botão alterna entre repouso e acionamento
 
 Hospede stylesheet.css e assets juntos e use a URL pública no parâmetro css. Configure a fonte do OBS em **750 × 630 px**, com smeter=1 e nocurve=1.
 
-Os gatilhos usam a opacidade controlada pelo Gamepad Viewer. Os demais comandos usam a classe pressed. Os comandos acendem em laranja. A válvula do cilindro NOS aponta para cima e para a esquerda. Os recursos são locais: SVGs dos comandos e PNG do cilindro NOS.
+Os gatilhos usam a opacidade controlada pelo Gamepad Viewer. Os demais comandos usam a classe pressed. Os comandos acendem com o gradiente dourado da cruz direcional. A válvula do cilindro NOS aponta para cima e para a esquerda; a garrafa fica inteiramente dentro do painel superior. Os recursos são locais: SVGs dos comandos e PNG do cilindro NOS.
