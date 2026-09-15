@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xbox azul e dourado — prévia</title>
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body { background: #242424 !important; font-family: Arial, sans-serif; }
+#toggle { position: fixed; top: 16px; left: 16px; z-index: 10000; padding: 10px 16px; color: #fff; background: #111; border: 1px solid #777; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<button id="toggle" type="button" aria-pressed="false">Iluminar comandos</button>
+<main class="controller custom" aria-label="Prévia da skin Xbox azul e dourado">
+<div class="triggers"><span class="trigger left"></span><span class="trigger right"></span></div>
+<div class="bumpers"><span class="bumper left"></span><span class="bumper right"></span></div>
+<div class="arrows"><span class="back"></span><span class="start"></span></div>
+<span class="meta"></span>
+<div class="abxy"><span class="button a"></span><span class="button b"></span><span class="button x"></span><span class="button y"></span></div>
+<div class="sticks"><span class="stick left"></span><span class="stick right"></span></div>
+<div class="dpad"><span class="face up"></span><span class="face down"></span><span class="face left"></span><span class="face right"></span></div>
+</main>
+<script>
+const toggle = document.querySelector('#toggle');
+toggle.addEventListener('click', () => {
+  const active = toggle.getAttribute('aria-pressed') !== 'true';
+  toggle.setAttribute('aria-pressed', String(active));
+  toggle.textContent = active ? 'Voltar ao repouso' : 'Iluminar comandos';
+  document.querySelectorAll('.bumper, .back, .start, .meta, .button, .stick, .face').forEach(element => element.classList.toggle('pressed', active));
+  document.querySelectorAll('.trigger').forEach(element => { element.style.opacity = active ? '1' : '0'; });
+});
+if (new URLSearchParams(location.search).get('pressed') === '1') toggle.click();
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Xbox azul e dourado — geometria nativa, botoes ABXY circulares. */
+:root { --controller-width: 750px; --controller-height: 630px; --controller-scale: 1; --accent: #ffc83d; --highlight: #fff0ad; --glow: rgba(255,198,47,.7); --active: brightness(0) invert(1); }
+html, body { width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: transparent !important; }
+.controller.custom { display: none !important; position: absolute !important; left: 50% !important; top: 50% !important; width: var(--controller-width) !important; height: var(--controller-height) !important; margin: 0 !important; transform: translate(-50%, -50%) scale(var(--controller-scale)) !important; transform-origin: center !important; background: url("./assets/base.svg?v=4") center / contain no-repeat !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; z-index: 9999 !important; filter: drop-shadow(0 7px 8px rgba(0,0,0,.55)); }
+.controller.custom:not(.disconnected), #gamepad-0.controller.custom.disconnected { display: block !important; }
+
+/* LT e RT analogicos. */
+.custom .triggers { display: block !important; position: absolute !important; left: 152px !important; top: 0 !important; width: 446px !important; height: 121px !important; z-index: 3; }
+.custom .trigger { display: block !important; position: absolute !important; top: 0 !important; width: 88px !important; height: 121px !important; margin: 0 !important; background: url("./assets/trigger.svg?v=2") no-repeat !important; filter: var(--active) drop-shadow(0 0 7px var(--glow)); opacity: 0; }
+.custom .trigger.left { left: 0 !important; }
+.custom .trigger.right { right: 0 !important; transform: rotateY(180deg) !important; }
+.custom .trigger-button { display: none !important; }
+
+/* LB e RB. */
+.custom .bumpers { display: block !important; position: absolute !important; left: 107px !important; top: 129px !important; width: 536px !important; height: 61px !important; z-index: 3; }
+.custom .bumper { display: block !important; position: absolute !important; top: 0 !important; width: 170px !important; height: 61px !important; background: url("./assets/bumper.svg?v=2") no-repeat !important; filter: var(--active) drop-shadow(0 0 6px var(--glow)); opacity: 0; }
+.custom .bumper.left { left: 0 !important; }
+.custom .bumper.right { right: 0 !important; transform: rotateY(180deg) !important; }
+.custom .bumper.pressed { opacity: 1 !important; }
+
+/* View, Menu e botao central. */
+.custom .arrows { display: block !important; position: absolute !important; left: 306px !important; top: 264px !important; width: 141px !important; height: 33px !important; z-index: 3; }
+.custom .back, .custom .start { display: block !important; position: absolute !important; top: 0 !important; width: 33px !important; height: 33px !important; background: none !important; filter: var(--active) drop-shadow(0 0 5px var(--glow)); opacity: 0; }
+.custom .back { left: 0 !important; }
+.custom .start { right: 0 !important; background-position: 33px 0 !important; }
+.custom .back.pressed, .custom .start.pressed { opacity: 1 !important; }
+.custom .meta { display: block !important; position: absolute !important; left: 351px !important; top: 174px !important; width: 48px !important; height: 48px !important; box-sizing: border-box !important; border: 1px solid rgba(255,255,255,.78) !important; border-radius: 50% !important; background-color: #090909 !important; background-image: url("./assets/xbox.svg?v=1") !important; background-position: center !important; background-size: 48px 48px !important; background-repeat: no-repeat !important; box-shadow: inset 0 0 0 2px rgba(35,35,35,.85), 0 0 7px rgba(255,255,255,.52); z-index: 4; }
+.custom .meta::before { content: none !important; display: none !important; }
+.custom .meta::after { content: none !important; display: none !important; }
+.custom .meta.pressed { filter: brightness(1.35) !important; transform: translateY(3px) scale(.94) !important; box-shadow: 0 0 13px var(--highlight) !important; }
+.custom .quadrant { display: none !important; }
+
+/* A, B, X e Y. */
+.custom .abxy { display: block !important; position: absolute !important; left: 488px !important; top: 192px !important; width: 153px !important; height: 156px !important; z-index: 3; }
+.custom .button { display: block !important; position: absolute !important; width: 48px !important; height: 48px !important; background-image: url("./assets/abxy.svg?v=2") !important; filter: drop-shadow(0 0 3px #000); }
+.custom .button.pressed { background-position-y: -48px !important; margin-top: 5px !important; filter: var(--active) drop-shadow(0 0 9px var(--highlight)); }
+.custom .a { left: 55px !important; top: 108px !important; background-position: 0 0 !important; }
+.custom .b { right: 0 !important; top: 58px !important; background-position: -49px 0 !important; }
+.custom .x { left: 4px !important; top: 58px !important; background-position: -98px 0 !important; }
+.custom .y { left: 55px !important; top: 7px !important; background-position: -147px 0 !important; }
+.custom .a.pressed { background-position: 0 -48px !important; }
+.custom .b.pressed { background-position: -49px -48px !important; }
+.custom .x.pressed { background-position: -98px -48px !important; }
+.custom .y.pressed { background-position: -147px -48px !important; }
+
+/* Analogicos assimetricos, movimento e clique L3/R3. */
+.custom .sticks { display: block !important; position: absolute !important; left: 144px !important; top: 239px !important; width: 371px !important; height: 196px !important; z-index: 3; }
+.custom .stick { display: block !important; position: absolute !important; width: 83px !important; height: 83px !important; margin: 0; transform: none !important; border-radius: 50% !important; background: url("./assets/stick.svg?v=1") center / contain no-repeat !important; filter: drop-shadow(0 0 4px rgba(255,255,255,.65)); }
+.custom .stick.left { left: 0 !important; top: 0 !important; }
+.custom .stick.right { left: 288px !important; top: 113px !important; }
+.custom .stick.pressed { filter: brightness(1.5) drop-shadow(0 0 13px var(--highlight)); }
+.custom .stick::before, .custom .stick::after { content: none !important; display: none !important; }
+.custom .wheels, .custom .wheel { display: none !important; }
+
+/* Direcional: a base faz parte do corpo; cada sentido acende separadamente. */
+.custom .dpad { display: block !important; position: absolute !important; left: 223px !important; top: 345px !important; width: 110px !important; height: 111px !important; z-index: 3; }
+.custom .face { display: block !important; position: absolute !important; background-image: url("./assets/dpad.svg?v=2") !important; filter: var(--active) drop-shadow(0 0 8px var(--highlight)); opacity: 0; }
+.custom .face.pressed { opacity: 1 !important; }
+.custom .face.up { left: 38px !important; top: 0 !important; width: 34px !important; height: 56px !important; background-position: 34px 0 !important; }
+.custom .face.down { left: 38px !important; bottom: 0 !important; width: 34px !important; height: 56px !important; }
+.custom .face.left { left: 0 !important; top: 38px !important; width: 55px !important; height: 35px !important; background-position: 0 -93px !important; }
+.custom .face.right { right: 0 !important; top: 38px !important; width: 55px !important; height: 35px !important; background-position: 0 -57px !important; }
+.custom .touchpad, .custom .fstick, .custom .speaker { display: none !important; }
+
+@media (max-width: 749px), (max-height: 629px) { :root { --controller-scale: .75; } }
+@media (max-width: 559px), (max-height: 471px) { :root { --controller-scale: .55; } }
+
+/* Acabamentos e estados da variante azul/dourada. */
+.custom .button { border-radius: 50%; background-repeat: no-repeat; }
+.custom .button.pressed { filter: drop-shadow(0 0 7px var(--glow)); }
+.custom .stick { filter: drop-shadow(0 3px 4px #041442); transform: none; }
+.custom .stick { width: 100px !important; height: 100px !important; }
+.custom .stick.left { left: -8px !important; top: -8px !important; }
+.custom .stick.right { left: 280px !important; top: 105px !important; }
+.custom .stick.pressed { filter: brightness(1.3) drop-shadow(0 0 9px var(--glow)); }
+.custom .meta { border: 0 !important; box-shadow: 0 2px 5px #000; }
+.custom .back, .custom .start { opacity: 1; border-radius: 50%; box-sizing: border-box; border: 2px solid #151720; background: linear-gradient(145deg,#ffeaa0,#ffbd22 55%,#b87508) !important; filter: drop-shadow(0 2px 2px #061435); }
+.custom .back::after { content: ''; position: absolute; left: 10px; top: 10px; width: 10px; height: 8px; border: 2px solid #28200c; }
+.custom .back::before { content: ''; position: absolute; left: 6px; top: 6px; width: 9px; height: 7px; border: 2px solid #28200c; }
+.custom .start::after { content: ''; position: absolute; left: 7px; top: 8px; width: 15px; height: 2px; background: #28200c; box-shadow: 0 5px #28200c,0 10px #28200c; }
+.custom .back.pressed, .custom .start.pressed { filter: brightness(1.4) drop-shadow(0 0 6px var(--glow)); }
+.custom .bumper { opacity: 1; filter: drop-shadow(0 1px 2px #121a30); }
+.custom .bumper.pressed { filter: sepia(1) saturate(3) drop-shadow(0 0 6px var(--glow)); }
+/* White trigger silhouettes stay visible while GPV drives overlay opacity. */
+.custom .triggers::before, .custom .triggers::after { content: ''; position: absolute; top: 0; width: 88px; height: 121px; background: url('./assets/trigger.svg') no-repeat; filter: drop-shadow(0 2px 2px #17223a); }
+.custom .triggers::before { left: 0; }
+.custom .triggers::after { right: 0; transform: rotateY(180deg); }
+.custom .trigger { z-index: 1; filter: sepia(1) saturate(3) drop-shadow(0 0 7px var(--glow)); }
